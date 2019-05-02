@@ -50,6 +50,19 @@ namespace JSON_Prob
 
             {
                 var movieInfo = client.GetAsync($"http://pcbstuou.w27.wh-2.com/webservices/3033/api/Movies?number=100").Result;
+                var movieStuff = movieInfo.Content.ReadAsStringAsync().Result;
+                //I need to convert the data to instances
+
+                List<MovieClass> information = JsonConvert.DeserializeObject<List<MovieClass>>(movieStuff);
+
+
+         
+
+                lbGenre.Items.Add("");
+                txtHighestIMDB.Text = "";
+                lbVote.Items.Add("");
+                txtRusso.Text = "";
+                txtDowney.Text = "";
             }
         }
     }
