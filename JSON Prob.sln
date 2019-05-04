@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON Prob", "JSON Prob\JSON Prob.csproj", "{9884D3B9-777B-46CB-B173-D86ACF7A6373}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Prob", "MVC Prob\MVC Prob.csproj", "{4748FAC9-D5B8-48F0-B5A5-8F3A24531744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9884D3B9-777B-46CB-B173-D86ACF7A6373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9884D3B9-777B-46CB-B173-D86ACF7A6373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9884D3B9-777B-46CB-B173-D86ACF7A6373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4748FAC9-D5B8-48F0-B5A5-8F3A24531744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4748FAC9-D5B8-48F0-B5A5-8F3A24531744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4748FAC9-D5B8-48F0-B5A5-8F3A24531744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4748FAC9-D5B8-48F0-B5A5-8F3A24531744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
