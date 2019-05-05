@@ -78,7 +78,7 @@ namespace JSON_Prob
                     }
                     else
                     {
-                        if(highestIMDBScores[0].imdb_score<movie.imdb_score)        //New highest imdb_score
+                        if(highestIMDBScores[0].imdb_score<movie.imdb_score)        //New highest imdb_score.
                         {
                             highestIMDBScores.Clear();
                             highestIMDBScores.Add(movie);
