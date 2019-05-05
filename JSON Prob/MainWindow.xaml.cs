@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -26,6 +27,7 @@ namespace JSON_Prob
         public MainWindow()
         {
             InitializeComponent();
+            ClearAll();
         }
 
         private void BttnClickMe_Click(object sender, RoutedEventArgs e)
@@ -46,24 +48,78 @@ namespace JSON_Prob
             //List all of the different movies that have a number of voted users with 350000 or more
             //How many movies where Anthony Russo is the director?//How many movies where Robert Downey Jr. is the actor 1?
 
-            using (HttpClient client = new HttpClient())
+
+
+            List<MovieClass> MoviesNumberUsersVoted = new List<MovieClass>();
+            List<MovieClass> movies;
+            List<MovieClass> highestIMDBScores = new List<MovieClass>();
+
+            using (var client = new HttpClient())
 
             {
-                var movieInfo = client.GetAsync($"http://pcbstuou.w27.wh-2.com/webservices/3033/api/Movies?number=100").Result;
-                var movieStuff = movieInfo.Content.ReadAsStringAsync().Result;
+                //GET ALL OF THE DATA WE NEED TO PERFORM THE ANALYTICS
+                var response = client.GetAsync($"http://pcbstuou.w27.wh-2.com/webservices/3033/api/Movies?number=100").Result;
+                var movieInfo = response.Content.ReadAsStringAsync().Result;
+                movies = JsonConvert.DeserializeObject<List<MovieClass>>(movieInfo);
+
+
+                //1) List all of the different genres for the movies
+                foreach(var movie in movies)
+                {
+                    lbGenre.Items.Add(movie.genres);
+                }
+
+                //2) Which movie has the highest IMDB score?
+                foreach (var movie in movies)
+                {
+                    if (highestIMDBScores.Count<1)
+                    {
+                        highestIMDBScores.Add(movie);
+                    }
+                    else
+                    {
+                        if(highestIMDBScores[0].imdb_score<movie.imdb_score)        //New highest imdb_score
+                        {
+                            highestIMDBScores.Clear();
+                            highestIMDBScores.Add(movie);
+                        }
+                        else if(highestIMDBScores[0].//finish thissssss)
+                    }
+                }
+                txtHighestIMDB.Text = highestIMDBScores[0].movie_title;
+
+
+                //List all of the different movies that have a number of voted users with 350000 or more
+                //How many movies where Anthony Russo is the director?//How many movies where Robert Downey Jr. is the actor 1?
+
+
+
+
+
                 //I need to convert the data to instances
 
-                List<MovieClass> information = JsonConvert.DeserializeObject<List<MovieClass>>(movieStuff);
+                //    List<MovieClass> information = JsonConvert.DeserializeObject<List<MovieClass>>(movieStuff);
 
 
-         
 
-                lbGenre.Items.Add("");
-                txtHighestIMDB.Text = "";
-                lbVote.Items.Add("");
-                txtRusso.Text = "";
-                txtDowney.Text = "";
+
+                //    lbGenre.Items.Add("");
+                //    txtHighestIMDB.Text = "";
+                //    lbVote.Items.Add("");
+                //    txtRusso.Text = "";
+                //    txtDowney.Text = "";
+                //}
             }
+
         }
+
+            private void ClearAll()
+            {
+                txtRusso.Inlines.Clear();
+                txtHighestIMDB.Inlines.Clear();
+                txtDowney.Inlines.Clear();
+                lbGenre.Items.Clear();
+                lbVote.Items.Clear();
+            }
     }
 }

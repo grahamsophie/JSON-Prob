@@ -15,9 +15,9 @@
         <Label Content="Number of movies where Robert Downey Jr. is the actor 1:" HorizontalAlignment="Left" Margin="49,298,0,0" VerticalAlignment="Top" Width="324"/>
         <ListBox x:Name="lbGenre" HorizontalAlignment="Left" Height="56" Margin="462,112,0,0" VerticalAlignment="Top" Width="297" IsEnabled="False"/>
         <ListBox x:Name="lbVote" HorizontalAlignment="Left" Height="56" Margin="462,205,0,0" VerticalAlignment="Top" Width="297" IsEnabled="False"/>
-        <TextBox x:Name="txtRusso" HorizontalAlignment="Left" Height="27" Margin="462,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" IsEnabled="False"/>
-        <TextBox x:Name="txtDowney" HorizontalAlignment="Left" Height="27" Margin="462,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" IsEnabled="False"/>
-        <TextBox x:Name="txtHighestIMDB" HorizontalAlignment="Left" Height="27" Margin="462,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" IsEnabled="False"/>
+        <TextBlock x:Name="txtHighestIMDB" HorizontalAlignment="Left" Margin="462,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="297" IsEnabled="False"/>
+        <TextBlock x:Name="txtRusso" HorizontalAlignment="Left" Margin="462,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="297" IsEnabled="False"/>
+        <TextBlock x:Name="txtDowney" HorizontalAlignment="Left" Margin="462,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="297" IsEnabled="False"/>
 
     </Grid>
 </Window>
