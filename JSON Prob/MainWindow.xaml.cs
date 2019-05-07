@@ -54,7 +54,7 @@ namespace JSON_Prob
             List<MovieClass> movies;
             List<MovieClass> highestIMDBScores = new List<MovieClass>();
 
-            using (var client = new HttpClient())
+            using (HttpClient client = new HttpClient())
 
             {
                 //GET ALL OF THE DATA WE NEED TO PERFORM THE ANALYTICS
@@ -64,7 +64,7 @@ namespace JSON_Prob
 
 
                 //1) List all of the different genres for the movies
-                foreach(var movie in movies)
+                foreach (var movie in movies)
                 {
                     lbGenre.Items.Add(movie.genres);
                 }
