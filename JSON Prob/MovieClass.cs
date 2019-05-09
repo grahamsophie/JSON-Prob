@@ -26,7 +26,7 @@ namespace JSON_Prob
         public string content_rating            {get; set;}
         public int budget                       {get; set;}
         public int title_year                   {get; set;}
-        public double imdb_score                   {get; set;}
+        public double imdb_score                {get; set;}
         public int movie_facebook_likes         {get; set;}
 
 
